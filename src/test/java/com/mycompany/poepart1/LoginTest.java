@@ -173,7 +173,7 @@ public class LoginTest {
         System.out.println("registerUser - cell number incorrectly formatted");
         String userName = "kyl_1";
         String password = "Ch&&sec@ke99!";
-        String cellNumber = "^\\+27\\d{9}$";
+        String cellNumber = "08966555230";
         Login instance = new Login();
         String expResult = "Cell phone number is incorrectly formatted or does not contain an international code, please correct the number and try again.";
         String result = instance.registerUser(userName, password, cellNumber);
