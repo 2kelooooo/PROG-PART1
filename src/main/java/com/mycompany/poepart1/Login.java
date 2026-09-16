@@ -70,7 +70,7 @@ if(password.length() < 8){
 }
 
            
-       //method used to register user and check all validations
+       //method used to register user and check all validations 
        
         public String registerUser(String Username ,String password,String PhoneNumber){
             
