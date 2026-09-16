@@ -87,5 +87,6 @@ public class PoePart1 {
             }
         }
         input.close();// close scanner
+    
     }
 }
