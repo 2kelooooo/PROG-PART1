@@ -25,7 +25,7 @@ public class LoginTest {
         Login instance = new Login();
         boolean expResult = true;
         boolean result = instance.checkUserName(userName);
-        assertEquals(expResult, result);
+        assertEquals(true, result);
     }
 
     // 2. Username  is bad it has no underscore
@@ -36,7 +36,7 @@ public class LoginTest {
         Login instance = new Login();
         boolean expResult = false;
         boolean result = instance.checkUserName(userName);
-        assertEquals(expResult, result);
+        assertEquals(false, result);
     }
 
     //  good - meets all rules
@@ -47,7 +47,7 @@ public class LoginTest {
         Login instance = new Login();
         boolean expResult = true;
         boolean result = instance.checkPasswordComplexity(password);
-        assertEquals(expResult, result);
+        assertEquals(true, result);
     }
 
     // bad , does not meet rules
@@ -58,7 +58,7 @@ public class LoginTest {
         Login instance = new Login();
         boolean expResult = false;
         boolean result = instance.checkPasswordComplexity(password);
-        assertEquals(expResult, result);
+        assertEquals(false, result);
     }
 
     //  good - +27 and correct length
@@ -69,7 +69,7 @@ public class LoginTest {
         Login instance = new Login();
         boolean expResult = true;
         boolean result = instance.checkCellPhoneNumber(cellNumber);
-        assertEquals(expResult, result);
+        assertEquals(true, result);
     }
 
     // no international code
@@ -80,7 +80,7 @@ public class LoginTest {
         Login instance = new Login();
         boolean expResult = false;
         boolean result = instance.checkCellPhoneNumber(cellNumber);
-        assertEquals(expResult, result);
+        assertEquals(false, result);
     }
 
     // 7. Register - username correct message
@@ -93,7 +93,7 @@ public class LoginTest {
         Login instance = new Login();
         String expResult = "Welcome kyl_1 it is great to see you.";
         String result = instance.registerUser(userName, password, cellNumber);
-        assertEquals(expResult, result);
+        assertEquals(true, result);
     }
 
     // 8. Login - correct username and password
@@ -104,7 +104,7 @@ public class LoginTest {
         instance.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976");
         boolean expResult = true;
         boolean result = instance.loginUser("kyl_1", "Ch&&sec@ke99!");
-        assertEquals(expResult, result);
+        assertEquals(true, result);
     }
 
     // 9. Login - wrong password
@@ -115,7 +115,7 @@ public class LoginTest {
         instance.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976");
         boolean expResult = false;
         boolean result = instance.loginUser("kyl_1", "wrongpass");
-        assertEquals(expResult, result);
+        assertEquals(false, result);
     }
 
     //  Return status - welcome back message
@@ -127,7 +127,7 @@ public class LoginTest {
         instance.loginUser("kyl_1", "Ch&&sec@ke99!");
         String expResult = "Welcome kyl_1 it is great to see you again.";
         String result = instance.returnLoginStatus("kyl_1" , "Ch&&sec@ke99!");
-        assertEquals(expResult, result);
+        assertEquals(true, result);
     }
 
     //  Return status - failed message
@@ -139,7 +139,7 @@ public class LoginTest {
         instance.loginUser("kyl_1", "wrongpass");
         String expResult = "Username or password incorrect, please try again.";
         String result = instance.returnLoginStatus("kyl_1", "wrong password");
-        assertEquals(expResult, result);
+        assertEquals(false, result);
     }
          //  Register - username incorrectly formatted
     @Test
@@ -151,7 +151,7 @@ public class LoginTest {
         Login instance = new Login();
         String expResult = "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than five characters in length.";
         String result = instance.registerUser(userName, password, cellNumber);
-        assertEquals(expResult, result);
+        assertEquals(false, result);
     }
 
     //   password does not meet complexity
@@ -164,7 +164,7 @@ public class LoginTest {
         Login instance = new Login();
         String expResult = "Password is not correctly formatted, please ensure that the password contains at least eight characters, a capital letter, a number and a special character.";
         String result = instance.registerUser(userName, password, cellNumber);
-        assertEquals(expResult, result);
+        assertEquals(false, result);
     }
 
     //   cell number incorrectly formatted
@@ -177,7 +177,7 @@ public class LoginTest {
         Login instance = new Login();
         String expResult = "Cell phone number is incorrectly formatted or does not contain an international code, please correct the number and try again.";
         String result = instance.registerUser(userName, password, cellNumber);
-        assertEquals(expResult, result);
+        assertEquals(false, result);
     }
 }
 
