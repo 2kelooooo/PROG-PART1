@@ -67,7 +67,7 @@ public class PoePart1 {
                 String result=login.registerUser(username, password, cell);
                 System.out.println(result);
 
-            } else if (choice.equals("2")) {// if user chooses to login
+            } else if (choice.equals("2")) {// if user chooses to join
                 if (login == null) {
                     System.out.println("No user registered yet.Please register first");
                 } else { // ask for login details
