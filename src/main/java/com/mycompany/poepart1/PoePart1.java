@@ -80,7 +80,7 @@ public class PoePart1 {
 
             } else if (choice.equals("3")) {
                 System.out.println("Exiting..");
-                running = false;//stop loop
+                running = false;// stop loop
 
             } else {
                 System.out.println("Invalid option");
