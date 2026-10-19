@@ -29,7 +29,7 @@ public class PoePart1 {
 
             System.out.println("Please choose an option:");
 
-            String choice=input.nextLine();
+            String choice=input.nextLine().trim();
             if(choice.equals("1")){
 
                 System.out.println("Enter first name ");
@@ -70,12 +70,22 @@ public class PoePart1 {
             } else if (choice.equals("2")) {// if user chooses to join
                 if (login == null) {
                     System.out.println("No user registered yet.Please register first");
-                } else { // ask for login details
+                } else { 
+                                    // ask for login details
                     System.out.println("Enter username to login");
                     String loginU = input.nextLine();
                     System.out.println("Enter password to login");
                     String loginP = input.nextLine();
                     System.out.println(login.returnLoginStatus(loginU, loginP));
+                    //link to part 2 
+                    if (login.loginUser(loginU,loginP)){
+                        System.out.println("Welcome to QuickChat.");
+                        System.out.println("How many messages do you wish to send?");
+                        int num=Integer.parseInt(input.nextLine());
+                        QuickChat quickchat=new QuickChat();
+                        quickchat.startChat(3);
+                        running=false;
+                    }
                 }
 
             } else if (choice.equals("3")) {
