@@ -190,7 +190,7 @@ public class test {
         assertNotEquals(9, result.length());
     }
 
-    // 19-22 MESSAGE HASH
+    
     @Test
     public void testMessageHashNotNull() {
         System.out.println("Message Hash - not null");
