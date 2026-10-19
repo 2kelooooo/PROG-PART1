@@ -36,13 +36,13 @@ public class Message {
         this.messageHash = "";
     }
 
-    // fixes createMessageID() red
+    // fixes createMessageID() 
     public String createMessageID() {
         long num = (long)(Math.random() * 9000000000L) + 1000000000L;
         return String.valueOf(num);
     }
 
-    // fixes createMessageHash(id, 0, "Hi Mike") red - THIS IS THE ONE IN YOUR PIC
+    // fixes createMessageHash
     public String createMessageHash(String id, int num, String msg) {
         if (msg == null || msg.trim().isEmpty()) {
             return (id.substring(0, 2) + ":" + num + ":EMPTY").toUpperCase();
@@ -70,7 +70,7 @@ public class Message {
         return m != null && m.length() <= 250;
     }
 
-    // fixes sentMessage() red in your last pic
+    // fixes sentMessage() 
     public String sentMessage(int choice) {
         if (choice == 1) {
             return "Message successfully sent.";
