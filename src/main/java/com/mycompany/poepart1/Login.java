@@ -36,7 +36,7 @@ public class Login {
     //this checks if the password has a capital letter, special character etc
     public boolean checkPasswordComplexity(String password){
         // checks length
-if(password.length() < 8){
+             if(password.length() < 8){
             return  false;
         }
         boolean HasCapitalLetter=false;
@@ -66,7 +66,7 @@ if(password.length() < 8){
     }
     //checks cellphone number format using Regex - must be an South African number with international code
        public boolean checkCellPhoneNumber(String PhoneNumber){
-               return PhoneNumber.startsWith("+27")&&PhoneNumber.length()<=13;
+               return PhoneNumber.startsWith("+27")&&PhoneNumber.length()<=12;
 }
 
            
@@ -84,17 +84,16 @@ if(password.length() < 8){
             if (!checkCellPhoneNumber(PhoneNumber)){
                 return "Cell phone number is incorrectly formatted or does not contain an international code, please correct the number and try again.";
             }
-                   this.userName=Username ;
-                   this.password=password;
+                   this.storedUserName=Username ;
+                   this.storedPassword=password;
                    this.cellPhoneNumber=PhoneNumber;
-                       String displayName = (Name != null && Surname != null) ? Name + " " + Surname : Username;
-                                 return "Welcome " + displayName + " it is great to see you.";               
+                       return"Username and password successfully captured.";               
             }
 //method used to check login and used to compare with saved
                 public boolean loginUser(String username, String password){
-        if(this.userName == null) return false;
+        if(this.storedUserName == null) return false;
         // must check BOTH with &&
-        return this.userName.equals(username) && this.password.equals(password);
+        return this.storedUserName.equals(username) && this.storedPassword.equals(password);
     }
 
     public String returnLoginStatus(String username, String password){
