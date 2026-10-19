@@ -41,7 +41,7 @@ public class QuickChat {
                 continue;
             }
 
-            System.out.println("What do you want to do?");
+            System.out.println("What do uou want to do?");
             System.out.println("1) Send Message");
             System.out.println("2) Disregard Message");
             System.out.println("3) Store Message");
