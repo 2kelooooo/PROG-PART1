@@ -109,7 +109,7 @@ public class Message {
         }
     }
 
-    public int returnTotalMessages() {
+    public int returnTotalMessages(){
         return total;
     }
 
