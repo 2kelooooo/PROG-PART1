@@ -74,7 +74,7 @@ public class QuickChat {
             if(choice==2){
                 return"Message disregarded.";
             }else{
-                return "Message successfully stored";
+                return "Message sucessfully stored.";
             }
         
     }
