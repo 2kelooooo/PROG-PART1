@@ -27,7 +27,7 @@ public class Message {
         this.messageHash = createMessageHash(this.messageID, this.messageNumber, this.message);
     }
 
-    // FOR TESTS - fixes all red new Message()
+    // FOR TESTS 
     public Message() {
         this.messageNumber = 0;
         this.recipient = "";
