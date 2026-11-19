@@ -35,3 +35,26 @@ OR in NetBeans: Test -> Test Project
 Expected: Tests run: 26, Failures: 0, Errors: 0
 
 ## Project Structure
+## Part 3 - QuickChat Report & Search
+
+### New Features Added
+- Search messages by Sender / Recipient
+- Delete message by Message ID
+- Display full report of all sent messages (Option 4 -> Option 6)
+- Longest message displayed
+
+### How to Run
+1. Run Main.java
+2. Login
+3. Choose QuickChat (Option 2)
+4. Choose Option 4 to view Report / Search / Delete
+
+### Test Results
+[Paste your Test screenshot here]
+Tests passed
+
+### Report Output
+[Paste your Report screenshot here]
+
+### GitHub Link
+https://github.com/2kelooooo/PROG-PART1
