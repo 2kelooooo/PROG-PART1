@@ -1,0 +1,14 @@
+[
+  {
+    "messageID": "2345678901",
+    "recipient": "+27838884567",
+    "message": "Where are you? You are late! I have asked you to be on time.",
+    "flag": "Stored"
+  },
+  {
+    "messageID": "4567890123",
+    "recipient": "+27838884567",
+    "message": "Ok, I am leaving without you.",
+    "flag": "Stored"
+  }
+]

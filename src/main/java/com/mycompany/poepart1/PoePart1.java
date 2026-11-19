@@ -78,8 +78,10 @@ public class PoePart1 {
                     String loginP = input.nextLine();
                     System.out.println(login.returnLoginStatus(loginU, loginP));
                     //link to part 2 
-                    if (login.loginUser(loginU,loginP)){
+                    if (login.loginUser(loginU,loginP) ){
+                        System.out.println("-----------------------");
                         System.out.println("Welcome to QuickChat.");
+                        System.out.println("-----------------------");
                         System.out.println("How many messages do you wish to send?");
                         int num=Integer.parseInt(input.nextLine());
                         QuickChat quickchat=new QuickChat();
