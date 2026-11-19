@@ -81,7 +81,7 @@ public class Message {
         if (choice == 3) {
             return "Message successfully stored.";
         }
-        return "Invalid";
+        return null;
     }
 
     // getters for QuickChat

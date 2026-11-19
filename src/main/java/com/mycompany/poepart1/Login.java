@@ -105,6 +105,10 @@ public class Login {
             return "Username or password incorrect, please try again.";
         }
     }
+
+    boolean returnLoginStatus(boolean loggedIn) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
             }
             
                     

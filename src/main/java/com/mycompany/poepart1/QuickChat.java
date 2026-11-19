@@ -4,79 +4,74 @@
  */
 package com.mycompany.poepart1;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
 /**
  *
  * @author Student
  */
+
+
+
 public class QuickChat {
+    public static void main(String[] args) {
+        MessageManager mm = new MessageManager();
+        Scanner sc = new Scanner(System.in);
+        int choice = 0;
 
-    Scanner input = new Scanner(System.in);
-    int count = 0;
+        while (choice != 5) {
+            System.out.println("\n=== QUICKCHAT ===");
+            System.out.println("1. Send Messages");
+            System.out.println("2. Show Recently Sent Messages");
+            System.out.println("3. Quit");
+            System.out.println("4. Stored Messages");
+            System.out.print("Choose: ");
+            choice = sc.nextInt();
+            sc.nextLine();
 
-    public void startChat(int limit) {
-        for (int i = 0; i < limit; i++) {
-            System.out.print("Enter recipient cell (+27...): ");
-            String rec = input.nextLine();
-
-            System.out.print("Enter your message (max 250): ");
-            String msg = input.nextLine();
-
-            Message m = new Message(i, rec, msg);
-
-            //  Check recipient 
-            boolean validCell = m.checkRecipientCell(rec);
-            if (!validCell) {
-                System.out.println("Cell phone number is incorrectly formatted or does not contain an international code, please correct the number and try again.");
-                i = i - 1;
-                continue;
-            } else {
-                System.out.println("Cell phone number successfully captured.");
-            }
-
-            // Check length 
-            if (!m.checkMessageLength(msg)) {
-                int extra = msg.length() - 250;
-                System.out.println("Message exceeds 250 characters by " + extra + ", please reduce size.");
-                i = i - 1;
-                continue;
-            }
-
-            System.out.println("What do uou want to do?");
-            System.out.println("1) Send Message");
-            System.out.println("2) Disregard Message");
-            System.out.println("3) Store Message");
-            int opt = Integer.parseInt(input.nextLine());
-
-            //  uses message method
-            String result = m.sentMessage(opt);
-            System.out.println(result);
-
-            if (opt == 1) {
-                System.out.println("MessageID: " + m.getMessageID());
-                System.out.println("Message Hash: " + m.getMessageHash());
-                System.out.println("Recipient: " + m.getRecipient());
-                System.out.println("Message: " + m.getMessage());
-                count++;
-            } else if (opt == 3) {
-                m.storeMessage();
-                System.out.println("Message successfully  stored.");
-                count++;
-            } else if (opt == 2) {
-                System.out.println("Message disregarded.");
+            if (choice == 1) System.out.println("Messages already populated for Part 3 - see Stored Messages menu.");
+            if (choice == 2) mm.displaySentMessages();
+            if (choice == 4) {
+                int sub = 0;
+                while (sub != 7) {
+                    System.out.println("\n--- STORED MESSAGES ---");
+                    System.out.println("1. Display sender & recipient of stored");
+                    System.out.println("2. Display longest stored message");
+                    System.out.println("3. Search by Message ID");
+                    System.out.println("4. Search by Recipient");
+                    System.out.println("5. Delete by Hash");
+                    System.out.println("6. Display Report");
+                    System.out.println("7. Back / Save & Load JSON");
+                    System.out.print("Choose: ");
+                    sub = sc.nextInt();
+                    sc.nextLine();
+                    if (sub == 1) mm.displayStoredSendersRecipients();
+                    if (sub == 2) mm.displayLongestMessage();
+                    if (sub == 3) {
+                        System.out.print("Enter Message ID: ");
+                        System.out.println(mm.searchByMessageID(sc.nextLine()));
+                    }
+                    if (sub == 4) {
+                        System.out.print("Enter Recipient: ");
+                        System.out.println(mm.searchByRecipient(sc.nextLine()));
+                    }
+                    if (sub == 5) {
+                        System.out.print("Enter Hash: ");
+                        System.out.println(mm.deleteMessageByHash(sc.nextLine()));
+                    }
+                    if (sub == 6) mm.displayReport();
+                    if (sub == 7) {
+                        mm.saveStoredMessagesToJson();
+                        mm.loadStoredMessagesFromJson();
+                    }
+                }
             }
         }
+        System.out.println("Goodbye!");
+        sc.close();
     }
 
-    public String sentMessage(int choice) {
-        if (choice==1){
-            return"Message sucessfully sent.";
-        }else 
-            if(choice==2){
-                return"Message disregarded.";
-            }else{
-                return "Message sucessfully stored.";
-            }
-        
+    void startChat(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
-
